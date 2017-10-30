@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Symbol List Banned</string>
+	<key>scope</key>
+	<string>source.sol meta.function-call, source.sol meta.instance.constructor</string>
+	<key>settings</key>
+	<dict>
+		<key>showInIndexedSymbolList</key>
+		<string>1</string>
+		<key>showInSymbolList</key>
+		<string>0</string>
+	</dict>
+	<key>uuid</key>
+	<string>2C865982-45DA-49F0-977D-FF22585FEFC9</string>
+</dict>
+</plist>
