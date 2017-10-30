@@ -184,10 +184,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#literal-quasi</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#literal-string</string>
 				</dict>
 				<dict>
@@ -283,12 +279,12 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>storage.type.class.sol</string>
+							<string>storage.type.contract.sol</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.class.sol</string>
+							<string>entity.name.contract.sol</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -415,7 +411,7 @@
 					<key>begin</key>
 					<string>
               (?x) (\b[_$a-zA-Z][$\w]*) \s*=
-              \s*(function)(?:\s*(\*)|(?=\s|[(]))
+              \s*(function|event|modifier)(?:\s*(\*)|(?=\s|[(]))
               \s*([_$a-zA-Z][$\w]*)?\s*
           </string>
 					<key>beginCaptures</key>
@@ -525,8 +521,8 @@
 					<key>begin</key>
 					<string>
               (?x) (\b_?[A-Z][$\w]*)? (\.)([_$a-zA-Z][$\w]*) \s*=
-              \s*(function)(?:\s*(\*)|(?=\s|[(]))
-              \s*([_$a-zA-Z][$\w]*)?\s*
+              \s*(function|event|modifier)(?:\s*(\*)|(?=\s|[(]))
+              \s*([_$a-zA-Z][$\w]*)*\s*
           </string>
 					<key>beginCaptures</key>
 					<dict>
@@ -622,8 +618,8 @@
 					<key>begin</key>
 					<string>
               (?x) \b([_$a-zA-Z][$\w]*) \s*(:)
-              \s*(function)(?:\s*(\*)|(?=\s|[(]))
-              \s*([_$a-zA-Z][$\w]*)?\s*
+              \s*(function|event|modifier)(?:\s*(\*)|(?=\s|[(]))
+              \s*([_$a-zA-Z][$\w]*)*\s*
           </string>
 					<key>beginCaptures</key>
 					<dict>
@@ -674,8 +670,8 @@
               (?x) (?:
               ((')((?:[^']|\\')*)('))|
               ((")((?:[^"]|\\")*)(")) ) \s*(:)
-              \s*(function)(?:\s*(\*)|(?=\s|[(]))
-              \s*([_$a-zA-Z][$\w]*)?\s*
+              \s*(function|event|modifier)(?:\s*(\*)|(?=\s|[(]))
+              \s*([_$a-zA-Z][$\w]*)*\s*
           </string>
 					<key>beginCaptures</key>
 					<dict>
@@ -1098,79 +1094,6 @@
 				</dict>
 			</array>
 		</dict>
-		<key>literal-quasi</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>([a-zA-Z$_][\w$_]*)?(`)</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>entity.quasi.tag.name.sol</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.quasi.begin.sol</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>`</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.quasi.end.sol</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>string.quasi.sol</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#string-content</string>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>\${</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>0</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.quasi.element.begin.sol</string>
-								</dict>
-							</dict>
-							<key>end</key>
-							<string>}</string>
-							<key>endCaptures</key>
-							<dict>
-								<key>0</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.quasi.element.end.sol</string>
-								</dict>
-							</dict>
-							<key>name</key>
-							<string>entity.quasi.element.sol</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#expression</string>
-								</dict>
-							</array>
-						</dict>
-					</array>
-				</dict>
-			</array>
-		</dict>
 		<key>literal-regexp</key>
 		<dict>
 			<key>patterns</key>
@@ -1179,7 +1102,7 @@
 					<key>begin</key>
 					<string>
               (?x) (?&lt;=
-              \.|\(|,|{|}|\[|;|,|&lt;|&gt;|&lt;=|&gt;=|==|!=|==|!=|\+|-|\*|%|\+\+|--|&lt;&lt;|&gt;&gt;|&gt;&gt;&gt;|&amp;|\||\^|!|~|&amp;&amp;|\|\||\?|:|=|\+=|-=|\*=|%=|&lt;&lt;=|&gt;&gt;=|&gt;&gt;&gt;=|&amp;=|\|=|\^=|/|/=| \Wnew|\Wdelete|\Wvoid|\Wreturn| ^new|^delete|^void|^return|^ )\s* (/) (?!/|\*|$)
+              \.|\(|,|{|}|\[|;|,|&lt;|&gt;|&lt;=|&gt;=|==|!=|\+|-|\*|%|\+\+|--|&lt;&lt;|&gt;&gt;|&gt;&gt;&gt;|&amp;|\||\^|!|~|&amp;&amp;|\|\||\?|:|=|\+=|-=|\*=|%=|&lt;&lt;=|&gt;&gt;=|&gt;&gt;&gt;=|&amp;=|\|=|\^=|/|/=| \Wnew|\Wdelete|\Wvoid|\Wreturn| ^new|^delete|^void|^return|^ )\s* (/) (?!/|\*|$)
           </string>
 					<key>beginCaptures</key>
 					<dict>

@@ -444,7 +444,7 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>js object</string>
+			<string>solidity object</string>
 			<key>scope</key>
 			<string>variable.other.object.sol</string>
 			<key>settings</key>
@@ -528,28 +528,6 @@
 			<dict>
 				<key>foreground</key>
 				<string>#AA0044</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>support.class.error.sol</string>
-			<key>scope</key>
-			<string>support.class.error.sol</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FF5522</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>variable.import.destructuring.sol</string>
-			<key>scope</key>
-			<string>variable.import.destructuring.sol</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#00BBFF</string>
 			</dict>
 		</dict>
 		<dict>
@@ -674,28 +652,6 @@
 			<dict>
 				<key>foreground</key>
 				<string>#00FF00</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>punctuation.quasi.element</string>
-			<key>scope</key>
-			<string>punctuation.quasi.element</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#008800</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>entity.quasi.tag.name.sol</string>
-			<key>scope</key>
-			<string>entity.quasi.tag.name.sol</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FFFF00</string>
 			</dict>
 		</dict>
 		<dict>
