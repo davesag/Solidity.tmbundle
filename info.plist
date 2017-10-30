@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contactEmailRot13</key>
+	<string>qnirfnt@tznvy.pbz</string>
+	<key>contactName</key>
+	<string>Dave Sag</string>
+	<key>description</key>
+	<string>Solidity Language Syntax Colouring.</string>
+	<key>name</key>
+	<string>Solidity</string>
+	<key>uuid</key>
+	<string>75EDFDEB-9E4C-4037-A3BD-37FB6B79BD90</string>
+</dict>
+</plist>
