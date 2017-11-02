@@ -595,6 +595,19 @@
 		</dict>
 		<dict>
 			<key>name</key>
+			<string>storage.type.library.sol</string>
+			<key>scope</key>
+			<string>storage.type.library.sol</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#001122</string>
+				<key>foreground</key>
+				<string>#0044AA</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
 			<string>entity.name.accessor.sol</string>
 			<key>scope</key>
 			<string>entity.name.accessor.sol</string>
@@ -656,9 +669,9 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>meta.group.braces.square, punctuation.destructuring</string>
+			<string>meta.group.braces.square</string>
 			<key>scope</key>
-			<string>meta.group.braces.square string.quoted.single, punctuation.destructuring</string>
+			<string>meta.group.braces.square string.quoted.single</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

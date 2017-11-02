@@ -7,7 +7,7 @@
 		<string>sol</string>
 	</array>
 	<key>firstLineMatch</key>
-	<string>^#!/.*\b(pragma|contract|import)$\n?</string>
+	<string>^#!/.*\b(pragma solidity \^[0..9]+\.[0..9]\.[0..9])$\n?</string>
 	<key>keyEquivalent</key>
 	<string>^~S</string>
 	<key>name</key>
@@ -200,6 +200,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#literal-library</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#literal-function-call</string>
 				</dict>
 				<dict>
@@ -273,7 +277,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(?x) (?&lt;!\.)\b(contract) \s+((?!\b(is)\b)[_$a-zA-Z][$\w]*)?</string>
+					<string>(?x) (?&lt;!\.)\b(contract|interface) \s+((?!\b(is)\b)[A-Z][$\w]*)?</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -285,6 +289,39 @@
 						<dict>
 							<key>name</key>
 							<string>entity.name.contract.sol</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>}</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.brace.curly.sol</string>
+						</dict>
+					</dict>
+				</dict>
+			</array>
+		</dict>
+		<key>literal-library</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(?x) (?&lt;!\.)\b(library) \s+([A-Z][$\w]*)?</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.library.sol</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.library.sol</string>
 						</dict>
 					</dict>
 					<key>end</key>
